@@ -4,6 +4,32 @@ body {
 	font-family: 'Open Sans';
 }
 
+*::selection {
+	background-color: #ff9900;
+}
+
+#main-content {
+	max-width: 1200px;
+	padding: 30px 15px;
+	margin: 0 auto;
+	font-size: 40px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	display: inline-block;
+	border-bottom: .15em solid #565656;
+	margin-bottom: .25em;
+	font-family: 'Exo 2';
+	font-weight: 600;
+}
+
+p {
+	font-size: 16px;
+}
+
 header {
 	border-bottom: 1px solid #565656;
 	box-shadow: 0 0 15px 2px rgba(0,0,0,.15);
@@ -15,11 +41,13 @@ header nav ul {
 
 header li {
 	display: inline-block;
+	margin: 0 5px;
 }
 
 header li:first-child {
 	display: block;
 	float: left;
+	margin-left: 0;
 }
 
 header li:first-child a {
@@ -27,6 +55,14 @@ header li:first-child a {
 	font-size: 30px;
 	font-weight: 900;
 	border-bottom: 0;
+	-webkit-transition: all 75ms ease-in;
+	   -moz-transition: all 75ms ease-in;
+	    -ms-transition: all 75ms ease-in;
+	     -o-transition: all 75ms ease-in;
+	        transition: all 75ms ease-in;
+}
+
+header li.current-page:first-child a {
 	box-shadow: inset 10px 0 0 0 #ff9900;
 	-webkit-transition: all 75ms ease-in;
 	   -moz-transition: all 75ms ease-in;
@@ -64,6 +100,15 @@ header li a {
 	        transition: all 100 ease-in;
 }
 
+header li.current-page:not(:first-child) a {
+	border-bottom: 10px solid #b2d9ff;
+	-webkit-transition: all 100 ease-in;
+	   -moz-transition: all 100 ease-in;
+	    -ms-transition: all 100 ease-in;
+	     -o-transition: all 100 ease-in;
+	        transition: all 100 ease-in;
+}
+
 header li:not(:first-child) a:hover {
 	color: black;
 	border-bottom: 10px solid #007fff;
@@ -72,4 +117,10 @@ header li:not(:first-child) a:hover {
 	    -ms-transition: all 250ms ease-out;
 	     -o-transition: all 250ms ease-out;
 	        transition: all 250ms ease-out;
+
+    -webkit-transition: border-bottom 250ms ease-out;
+       -moz-transition: border-bottom 250ms ease-out;
+        -ms-transition: border-bottom 250ms ease-out;
+         -o-transition: border-bottom 250ms ease-out;
+            transition: border-bottom 250ms ease-out;
 }
